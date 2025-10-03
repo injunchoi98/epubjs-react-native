@@ -106,8 +106,6 @@ export function GestureHandler({
 				gesture={Gesture.Exclusive(
 					swipeLeft,
 					swipeRight,
-					swipeUp,
-					swipeDown,
 					longPress,
 					doubleTap,
 					singleTap,

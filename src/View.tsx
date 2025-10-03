@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Dimensions, View as RNView } from 'react-native';
+import { Dimensions, View as RNView, Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 import type {
   ShouldStartLoadRequest,
@@ -472,6 +472,7 @@ export function View({
         javaScriptEnabled
         originWhitelist={['*']}
         scrollEnabled={false}
+        nestedScrollEnabled={Platform.OS === 'android' ? true : undefined}
         mixedContentMode="compatibility"
         onMessage={onMessage}
         menuItems={menuItems?.map((item, key) => ({
